@@ -1,0 +1,41 @@
+name = [ ]
+address = [ ]
+Full_name = input("Full Name : ")
+Delivery_Address =input("Delivery Address : ")
+postcode = input("postcode : ")
+credit_card_number = input("Please enter your credit card number: \n")
+expiry_date = input("Please enter your cards Expiry date : ")
+security_code = input("Please enter cards Security code: ")
+# Remove spaces from the input
+credit_card_number = credit_card_number.replace(" ", "")
+
+while len(credit_card_number) != 16:
+    print("Invalid credit card number. Please enter a 16-digit number.")
+    credit_card_number = input("Please enter your credit card number: \n")
+    credit_card_number = credit_card_number.replace(" ", "")
+
+# Display stars for the previous 12 digits and reveal the last 4 digits
+masked_number = '*' * 12 + credit_card_number[-4:]
+print(f'''\nPlease confirm your details.
+\t\n{Full_name}
+\t\n{Delivery_Address}
+\t\n{postcode}
+\t\ncredit card number: {masked_number}
+\t\nexpiry date: {expiry_date}
+\t\nsecurity code: {security_code}\n''')
+
+
+while True:
+        option = input(f"\nplease confirm if your details are correct (yes/no): ").lower()
+        
+        if option == 'yes':
+            print("Amazing delivery will take 10-14 days ")
+            break
+        
+        elif option == 'no':
+            print("oh im sorry lets start again ")
+        else: 
+            print("incorrect choice plese try again")
+ 
+ 
+  
